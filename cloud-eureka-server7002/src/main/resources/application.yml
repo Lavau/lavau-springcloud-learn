@@ -1,0 +1,21 @@
+server:
+  port: 7002
+
+eureka:
+  instance:
+    hostname: eruka7002.com
+  client:
+    # false 表示注册中心不注册自己
+    register-with-eureka: false
+    # 表示自己是注册中心，职责是维护服务实例，不需要检索服务
+    fetch-registry: false
+    service-url:
+      # 设置与 Eureka Server 交互的地址查询服务和注册服务的 Eureka Server 地址
+      defaulZone: http://eruka7001.com:7001/eureka
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/db2019?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
